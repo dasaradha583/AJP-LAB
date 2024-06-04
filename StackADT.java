@@ -128,16 +128,54 @@ class LinkedStack implements InnerStackADT{
 
 public class StackADT {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        ArrayStack arr = new ArrayStack();
-        LinkedStack l = new LinkedStack();
-        System.out.println("1.Arrays 2.Linked List");
-        System.out.print("Enter your choice : ");
-        int choice = sc.nextInt();
-        switch(choice){
-            case 1:
+        try (Scanner sc = new Scanner(System.in)) {
+            ArrayStack arr = new ArrayStack();
+            LinkedStack l = new LinkedStack();
+            System.out.println("1.Arrays 2.Linked List");
+            System.out.print("Enter your choice : ");
+            int choice = sc.nextInt();
+            switch(choice){
+                case 1:
+                    while(true){
+                    
+                        System.out.println("1.Push 2.pop 3.peek  4. IsEmpty 5.display  6.exit");
+                        System.out.print("Enter your choice : ");
+                        int c = sc.nextInt();
+                        switch (c) {
+                            case 1:
+                                System.out.print("Enter integer : ");
+                                int data = sc.nextInt();
+                                l.push(data);
+                                break;
+                            case 2:
+                                l.pop();
+                                break;
+                            
+                            case 3:
+                                if(l.peek() == 0){
+                                    System.out.println("Stack is empty");
+                                } else {
+                                    System.out.println("The peek element is : " + l.peek());
+                                }
+                                break;
+                            case 4:
+                                if(l.isEmpty()){
+                                    System.out.println("Stack is empty");
+                                } else {
+                                    System.out.println("Stack is not empty");
+                                }
+                                break;
+                            case 5:
+                                l.display();
+                                break;
+                            default:
+                                System.exit(0);
+                                break;
+                        }
+                    }
+                case 2:
                 while(true){
-                
+                    
                     System.out.println("1.Push 2.pop 3.peek  4. IsEmpty 5.display  6.exit");
                     System.out.print("Enter your choice : ");
                     int c = sc.nextInt();
@@ -145,73 +183,36 @@ public class StackADT {
                         case 1:
                             System.out.print("Enter integer : ");
                             int data = sc.nextInt();
-                            l.push(data);
+                            arr.push(data);
                             break;
                         case 2:
-                            l.pop();
+                            arr.pop();
                             break;
                         
                         case 3:
-                            if(l.peek() == 0){
+                            if(arr.peek() == 0){
                                 System.out.println("Stack is empty");
                             } else {
-                                System.out.println("The peek element is : " + l.peek());
+                                System.out.println("The peek element is : " + arr.peek());
                             }
                             break;
                         case 4:
-                            if(l.isEmpty()){
+                            if(arr.isEmpty()){
                                 System.out.println("Stack is empty");
                             } else {
                                 System.out.println("Stack is not empty");
                             }
                             break;
                         case 5:
-                            l.display();
+                            arr.display();
                             break;
                         default:
                             System.exit(0);
                             break;
                     }
                 }
-            case 2:
-            while(true){
-                
-                System.out.println("1.Push 2.pop 3.peek  4. IsEmpty 5.display  6.exit");
-                System.out.print("Enter your choice : ");
-                int c = sc.nextInt();
-                switch (c) {
-                    case 1:
-                        System.out.print("Enter integer : ");
-                        int data = sc.nextInt();
-                        arr.push(data);
-                        break;
-                    case 2:
-                        arr.pop();
-                        break;
                     
-                    case 3:
-                        if(arr.peek() == 0){
-                            System.out.println("Stack is empty");
-                        } else {
-                            System.out.println("The peek element is : " + arr.peek());
-                        }
-                        break;
-                    case 4:
-                        if(arr.isEmpty()){
-                            System.out.println("Stack is empty");
-                        } else {
-                            System.out.println("Stack is not empty");
-                        }
-                        break;
-                    case 5:
-                        arr.display();
-                        break;
-                    default:
-                        System.exit(0);
-                        break;
-                }
             }
-                
         }
 
     }
