@@ -1,0 +1,57 @@
+.Text-shadow{
+    text-shadow: 1px 3px 5px black;   
+    padding:20px;
+}
+.rounded-shawdow{
+    box-shadow: 10px 10px 30px 30px ;
+    padding: 20px;
+    width: 100%;
+}
+.linear-gradient{
+    padding:10px;
+    background: linear-gradient(90deg, #ff0000 20%, #0000ff 100%);
+    height: 100px;
+    width: 100%;
+}
+.radial-gradient{
+    padding:10px;
+    background: radial-gradient(circle, #ff0000 0%, #0000ff 100%);
+    height: 100px;
+    width: 100%;
+}
+.animation{
+    animation: disco 4s infinite;
+    padding: 20px;
+    width: 100%;
+}
+.animation:hover{
+    animation: disco 9s normal;
+}
+@keyframes disco {
+    0%   {
+        background-color: red;
+        
+    }
+    25%  {
+        background-color: yellow;
+    }
+    50%  {
+        background-color: blue;
+    }
+    100% {
+        background-color: green;
+    }
+}
+.transition-transform {
+    background-color: red;
+    padding:20px;
+    width: 100%;
+}
+.transition-transform p{
+    transform: translateX(20%); 
+    transition: transform 2s ease-in-out ;
+}
+.transition-transform:hover p{
+    transform: translateX(0);   
+    transform: translateX(20%,-20%);
+}   
